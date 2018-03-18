@@ -1,4 +1,4 @@
-var w = new Worker('worker.js');
+var w = new Worker('js/worker.js');
 
 w.onmessage = function(e) {
   var result = e.data;

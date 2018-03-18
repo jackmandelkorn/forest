@@ -1,5 +1,3 @@
-self.importScripts("https://github.com/kpozin/jquery-nodom");
-
 //when the worker receives a message
 onmessage = function(e) {
   var query = e.data[0];
@@ -15,11 +13,35 @@ function search(searchTerm,callback,image) {
     endpoint += "&searchType=image";
   }
   endpoint += ("&q=" + encodeURIComponent(searchTerm));
-  $.ajax({
-    method: "GET",
-    url: endpoint,
-    success: function(data){
-      (callback)(data);
-    }
-  });
+  ajax(endpoint,{},function(data){(callback)(data);},"GET");
 }
+
+//ajax request
+var ajax = function(url, data, callback, type) {
+  var data_array, data_string, idx, req, value;
+  if (data == null) {
+    data = {};
+  }
+  if (callback == null) {
+    callback = function() {};
+  }
+  if (type == null) {
+    type = 'GET';
+  }
+  data_array = [];
+  for (idx in data) {
+    value = data[idx];
+    data_array.push("" + idx + "=" + value);
+  }
+  data_string = data_array.join("&");
+  req = new XMLHttpRequest();
+  req.open(type, url, false);
+  req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  req.onreadystatechange = function() {
+    if (req.readyState === 4 && req.status === 200) {
+      return callback(req.responseText);
+    }
+  };
+  req.send(data_string);
+  return req;
+};

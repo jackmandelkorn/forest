@@ -26,7 +26,7 @@ class Panel {
   update() {
   	this.obj.style.width = this.width + "px";
     if (((this.z - globalZ) * -1) > (300 * Math.cos((globalXDeg * Math.PI) / 180))) {
-      this.obj.style.zIndex = 1000000 - Math.floor(Math.sqrt(Math.pow(((this.z - globalZ)),2) + Math.pow((this.x - globalX),2))  * 1);
+      this.obj.style.zIndex = 1000000 - Math.floor(Math.sqrt(Math.pow(((this.z - globalZ)),2) + Math.pow((this.x - globalX),2))  * -1);
     }
     else {
       this.obj.style.zIndex = 1000000 - Math.floor(Math.sqrt(Math.pow(((this.z - globalZ)),2) + Math.pow((this.x - globalX),2)) * -1);

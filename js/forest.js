@@ -17,7 +17,7 @@ w.onmessage = function(e) {
         var width = defaultWidth + Math.round(Math.random() * (defaultWidth / 10));
         var height = Math.round((width / result.items[i].image.width) * result.items[i].image.height);
         var panel = new Panel(width,height,(Math.round(Math.random() * globalSize) - (globalSize / 2)),0,(Math.round(Math.random() * globalSize) - (globalSize / 2)),("background-image:url(" + result.items[i].link + ")"));
-        panel.obj.onclick = function(){window.open(result.items[i].image.contextLink.slice())};
+        panel.obj.onclick = function(){window.open(result.items.slice()[i].image.contextLink);};
         panel.obj.style.cursor = "pointer";
       }
     }

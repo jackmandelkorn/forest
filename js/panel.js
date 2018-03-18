@@ -20,7 +20,7 @@ class Panel {
     this.update();
     this.obj.className = "panel";
     this.obj.id = this.id;
-    this.obj.href = link;
+    this.obj.onclick = function(){window.open(link)};
     document.getElementById("main").appendChild(this.obj);
   }
   update() {

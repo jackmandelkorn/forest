@@ -26,10 +26,10 @@ class Panel {
   update() {
   	this.obj.style.width = this.width + "px";
     if (((this.z - globalZ) * -1) > (300 * Math.cos((globalXDeg * Math.PI) / 180))) {
-      this.obj.style.zIndex = 1000000 - Math.floor(Math.sqrt(Math.pow(((this.z - globalZ)),2) + Math.pow((this.x - globalX),2))  * 1000);
+      this.obj.style.zIndex = 1000000 - Math.floor(Math.sqrt(Math.pow(((this.z - (globalZ - (Math.cos((globalXDeg * Math.PI) / 180) * 300)))),2) + Math.pow((this.x - (globalX - (Math.sin((globalXDeg * Math.PI) / 180) * 300))),2))  * 1000);
     }
     else {
-      this.obj.style.zIndex = 1000000 - Math.floor(Math.sqrt(Math.pow(((this.z - globalZ)),2) + Math.pow((this.x - globalX),2)) * 1000);
+      this.obj.style.zIndex = 1000000 - Math.floor(Math.sqrt(Math.pow(((this.z - (globalZ - (Math.cos((globalXDeg * Math.PI) / 180) * 300)))),2) + Math.pow((this.x - (globalX - (Math.sin((globalXDeg * Math.PI) / 180) * 300))),2))  * 1000);
     }
     this.obj.style.height = this.height + "px";
     this.obj.style.margin = "0px -" + (this.width / 2) + "px";

@@ -1,0 +1,32 @@
+body {
+  background-color: AliceBlue;
+  margin: 0;
+}
+
+#main {
+  width: 100vw;
+  box-sizing: border-box;
+  height: 100vh;
+  perspective: 300px;
+  perspective-origin: 50% 90%;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#ground {
+  z-index: -1;
+  background-color: #f0f0f0;
+  width: 100vw;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}
+
+.panel {
+  transform-style: preserve-3d;
+  transition: height ease 0.3s;
+}

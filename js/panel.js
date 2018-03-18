@@ -50,7 +50,7 @@ function updateGround() {
   ground.style.height = (((window.innerHeight * (0.1 - (Math.sin((globalYDeg * Math.PI) / 180) / 2)))) - 5) + "px";
 }
 
-var speed = 20;
+var speed = 14;
 onKey(37,function(){
   globalZ -= -1 * Math.sin((globalXDeg * Math.PI) / 180) * speed;
   globalX -= Math.cos((globalXDeg * Math.PI) / 180) * speed * 1;

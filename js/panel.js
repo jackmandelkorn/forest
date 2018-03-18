@@ -7,7 +7,7 @@ var globalYDeg = 0;
 class Panel {
   constructor(width, height, x, y, z, spin, style) {
     Panel.all.push(this);
-  	this.id = Math.random().toString(36).substr(2, 9);
+  	this.id = "panel-" + Math.random().toString(36).substr(2, 9);
     this.height = height;
     this.width = width;
     this.x = x;

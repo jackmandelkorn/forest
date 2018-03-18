@@ -7,5 +7,5 @@ w.onmessage = function(e) {
 
 
 function search(query) {
-  my.postMessage([query]);
+  w.postMessage([query]);
 }

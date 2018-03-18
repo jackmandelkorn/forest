@@ -33,7 +33,7 @@ class Panel {
     }
     this.obj.style.height = this.height + "px";
     this.obj.style.margin = "0px -" + (this.width / 2) + "px";
-    this.obj.style.transform = "rotateX(" + globalYDeg + "deg) rotateY(" + globalXDeg + "deg) translateX(" + (this.x - globalX) + "px) translateY(" + ((this.y - globalY) * -1) + "px) translateZ(" + ((this.z - globalZ) * -1) + "px) rotateY(" + spin + "deg)";
+    this.obj.style.transform = "rotateX(" + globalYDeg + "deg) rotateY(" + globalXDeg + "deg) translateX(" + (this.x - globalX) + "px) translateY(" + ((this.y - globalY) * -1) + "px) translateZ(" + ((this.z - globalZ) * -1) + "px) rotateY(" + this.spin + "deg)";
   }
 }
 Panel.all = new Array();

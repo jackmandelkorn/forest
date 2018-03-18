@@ -39,7 +39,7 @@ var ajax = function(url, data, callback, type) {
   req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   req.onreadystatechange = function() {
     if (req.readyState === 4 && req.status === 200) {
-      return callback(req.responseText);
+      (callback)(req.responseText);
     }
   };
   req.send(data_string);

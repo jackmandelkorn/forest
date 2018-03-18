@@ -1,3 +1,5 @@
+self.importScripts("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+
 //when the worker receives a message
 onmessage = function(e) {
   var query = e.data[0];

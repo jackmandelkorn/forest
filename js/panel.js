@@ -5,7 +5,7 @@ var globalXDeg = 0;
 var globalYDeg = 0;
 
 class Panel {
-  constructor(width, height, x, y, z, style) {
+  constructor(width, height, x, y, z, spin, style) {
     Panel.all.push(this);
   	this.id = Math.random().toString(36).substr(2, 9);
     this.height = height;
@@ -13,6 +13,7 @@ class Panel {
     this.x = x;
     this.y = y;
     this.z = z;
+    this.spin = spin;
     this.obj = document.createElement("div");
     if (style) {
       this.obj.style = style;
@@ -32,7 +33,7 @@ class Panel {
     }
     this.obj.style.height = this.height + "px";
     this.obj.style.margin = "0px -" + (this.width / 2) + "px";
-    this.obj.style.transform = "rotateX(" + globalYDeg + "deg) rotateY(" + globalXDeg + "deg) translateX(" + (this.x - globalX) + "px) translateY(" + ((this.y - globalY) * -1) + "px) translateZ(" + ((this.z - globalZ) * -1) + "px)";
+    this.obj.style.transform = "rotateX(" + globalYDeg + "deg) rotateY(" + globalXDeg + "deg) translateX(" + (this.x - globalX) + "px) translateY(" + ((this.y - globalY) * -1) + "px) translateZ(" + ((this.z - globalZ) * -1) + "px) rotateY(" + spin + "deg)";
   }
 }
 Panel.all = new Array();

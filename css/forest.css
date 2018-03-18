@@ -29,16 +29,22 @@ body {
   left: 0px;
 }
 
-#info {
+.text {
   color: gray;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   position: fixed;
   z-index: 10000000000;
   margin: 0;
+  font-size: 14px;
+}
+#info {
   top: 8px;
   left: 8px;
-  font-size: 14px;
+}
+#header {
+  top: 8px;
+  right: 8px;
 }
 
 .panel {
@@ -47,4 +53,13 @@ body {
   background-size: cover;
   background-position: center;
   box-sizing: border-box;
+}
+
+.panel-flex {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }

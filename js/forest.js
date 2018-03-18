@@ -1,4 +1,4 @@
-var globalSize = 10000;
+var globalSize = 7000;
 var defaultWidth = 200;
 var globalResult;
 
@@ -15,7 +15,7 @@ w.onmessage = function(e) {
 
 function search(query,amount) {
   if (!amount) {
-    var amount = 1000;
+    var amount = 100;
   }
   w.postMessage([query,amount]);
 }

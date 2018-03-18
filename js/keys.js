@@ -6,13 +6,11 @@ for (i = 0; i < 223; i++) {
 
 document.onkeydown = function(e) {
     e = e || event;
-    e.preventDefault();
     keyMap[e.keyCode] = true;
 };
 
 document.onkeyup = function(e) {
     e = e || event;
-    e.preventDefault();
     keyMap[e.keyCode] = false;
 };
 

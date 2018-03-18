@@ -1,11 +1,11 @@
 var w = new Worker('js/worker.js');
 
 w.onmessage = function(e) {
-  var result = e.data;
+  var result = JSON.parse(e.data);
   console.log(result);
 }
 
 
-function search(query) {
-  w.postMessage([query]);
+function search(query,amount) {
+  w.postMessage([query,amount]);
 }

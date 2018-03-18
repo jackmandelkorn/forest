@@ -1,6 +1,7 @@
 //when the worker receives a message
 onmessage = function(e) {
   var query = e.data[0];
+  var amount = e.data[1];
   search(query,function(data){
     postMessage(JSON.stringify(data));
   },true);

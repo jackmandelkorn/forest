@@ -45,6 +45,7 @@ body {
 #header {
   top: 8px;
   right: 8px;
+  text-align: right;
 }
 
 .panel {

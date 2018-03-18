@@ -14,5 +14,8 @@ w.onmessage = function(e) {
 }
 
 function search(query,amount) {
+  if (!amount) {
+    var amount = 100;
+  }
   w.postMessage([query,amount]);
 }

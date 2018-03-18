@@ -8,12 +8,24 @@ onmessage = function(e) {
 
 //run google search (image or regular)
 function search(searchTerm,i,total,callback,image) {
-  var endpoint = "https://www.googleapis.com/customsearch/v1?key=AIzaSyA-y6-ILMJbJMCfBKn3oDBfrZ4qMn-c51w&cx=012647276964435196336:r1urwy9ecum";
-  if (image) {
-    endpoint += "&searchType=image";
+  if (i < total) {
+    var start = Math.floor(i / 10) * 10;
+    var num = 10;
+    if (total - start < 10) {
+      num = total - start;
+    }
+    var endpoint = "https://www.googleapis.com/customsearch/v1?key=AIzaSyA-y6-ILMJbJMCfBKn3oDBfrZ4qMn-c51w&cx=012647276964435196336:r1urwy9ecum";
+    if (image) {
+      endpoint += "&searchType=image";
+    }
+    endpoint += "&num=" + num;
+    endpoint += "&start=" + start;
+    endpoint += ("&q=" + encodeURIComponent(searchTerm));
+    ajax(endpoint,{},function(data){
+      search(searchTerm,(i + num),total,callback,image);
+      (callback)(data);
+    },"GET");
   }
-  endpoint += ("&q=" + encodeURIComponent(searchTerm));
-  ajax(endpoint,{},function(data){(callback)(data);},"GET");
 }
 
 //ajax request

@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 body {
   background-color: AliceBlue;
   margin: 0;
+  overflow: hidden;
 }
 
 #main {
@@ -24,6 +27,18 @@ body {
   position: fixed;
   bottom: 0px;
   left: 0px;
+}
+
+#info {
+  color: gray;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  position: fixed;
+  z-index: 10000000000;
+  margin: 0;
+  top: 8px;
+  left: 8px;
+  font-size: 14px;
 }
 
 .panel {

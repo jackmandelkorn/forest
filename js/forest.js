@@ -4,6 +4,8 @@ var gif = false;
 var globalResult;
 var repeat = 2;
 
+updateAll();
+
 var w = new Worker('js/worker.js');
 w.onmessage = function(e) {
   var result = JSON.parse(JSON.parse(e.data));

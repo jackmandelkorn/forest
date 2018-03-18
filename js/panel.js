@@ -42,6 +42,7 @@ function updateAll() {
   	Panel.all[i].update();
   }
   updateGround();
+  updateInfo();
 }
 
 function updateGround() {
@@ -75,4 +76,14 @@ function mouseMove(event) {
   globalXDeg = ((event.clientX - (window.innerWidth / 2)) / window.innerWidth) * 2 * (215);
   globalYDeg = ((event.clientY - (window.innerHeight / 2)) / window.innerHeight) * -2 * (30);
   updateAll();
+}
+
+function updateInfo() {
+  var directions = ["North", "North-West", "West", "South-West", "South", "South-East", "East", "North-East"];
+  var el = document.getElementById("info");
+  var deg = -1 * globalXDeg;
+  var direction = directions[Math.round(((deg %= 360) < 0 ? deg + 360 : deg) / 45) % 8].toLowerCase();
+  var x = Math.round(globalX / 7);
+  var y = Math.round(globalZ / 7);
+  el.innerHTML = "x: " + x + "<br>y: " + y+ "<br>facing: " + direction;
 }

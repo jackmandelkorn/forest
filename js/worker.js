@@ -18,8 +18,8 @@ function search(searchTerm,i,total,callback,image) {
     if (image) {
       endpoint += "&searchType=image";
     }
-    endpoint += "&num=" + num;
-    endpoint += "&start=" + start;
+    endpoint += "&num=" + encodeURIComponent(num);
+    endpoint += "&start=" + encodeURIComponent(start);
     endpoint += ("&q=" + encodeURIComponent(searchTerm));
     ajax(endpoint,{},function(data){
       search(searchTerm,(i + num),total,callback,image);

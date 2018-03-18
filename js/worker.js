@@ -1,14 +1,13 @@
-//when the worker receives a message
 onmessage = function(e) {
   var query = e.data[0];
   var amount = e.data[1];
-  search(query,function(data){
+  search(query,0,amount,function(data){
     postMessage(JSON.stringify(data));
   },true);
 }
 
 //run google search (image or regular)
-function search(searchTerm,callback,image) {
+function search(searchTerm,i,total,callback,image) {
   var endpoint = "https://www.googleapis.com/customsearch/v1?key=AIzaSyA-y6-ILMJbJMCfBKn3oDBfrZ4qMn-c51w&cx=012647276964435196336:r1urwy9ecum";
   if (image) {
     endpoint += "&searchType=image";

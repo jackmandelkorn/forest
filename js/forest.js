@@ -1,4 +1,4 @@
-var globalSize = 1000;
+var globalSize = 5000;
 var defaultWidth = 150;
 var globalResult;
 

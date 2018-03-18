@@ -1,5 +1,5 @@
-var globalSize = 5000;
-var defaultWidth = 150;
+var globalSize = 10000;
+var defaultWidth = 200;
 var globalResult;
 
 var w = new Worker('js/worker.js');
@@ -7,7 +7,7 @@ w.onmessage = function(e) {
   var result = JSON.parse(JSON.parse(e.data));
   globalResult = result;
   for (var i = 0; i < result.items.length; i++) {
-    var width = defaultWidth + Math.round(Math.random() * 10);
+    var width = defaultWidth + Math.round(Math.random() * (defaultWidth / 10));
     var height = Math.round((width / result.items[i].image.width) * result.items[i].image.height);
     new Panel(width,height,(Math.round(Math.random() * globalSize) - (globalSize / 2)),0,(Math.round(Math.random() * globalSize) - (globalSize / 2)),("background-image:url(" + result.items[i].link + ")"));
   }
@@ -15,7 +15,7 @@ w.onmessage = function(e) {
 
 function search(query,amount) {
   if (!amount) {
-    var amount = 100;
+    var amount = 1000;
   }
   w.postMessage([query,amount]);
 }

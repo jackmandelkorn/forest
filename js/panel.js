@@ -25,12 +25,7 @@ class Panel {
   }
   update() {
   	this.obj.style.width = this.width + "px";
-    if (((this.z - globalZ) * -1) > (300 * Math.cos((globalXDeg * Math.PI) / 180))) {
-      this.obj.style.zIndex = 1000000 - Math.floor(Math.sqrt(Math.pow(((this.z - (globalZ - (Math.cos((globalXDeg * Math.PI) / 180) * 300)))),2) + Math.pow((this.x - (globalX - (Math.sin((globalXDeg * Math.PI) / 180) * 300))),2))  * 1000);
-    }
-    else {
-      this.obj.style.zIndex = 1000000 - Math.floor(Math.sqrt(Math.pow(((this.z - (globalZ - (Math.cos((globalXDeg * Math.PI) / 180) * 300)))),2) + Math.pow((this.x - (globalX - (Math.sin((globalXDeg * Math.PI) / 180) * 300))),2))  * 1000);
-    }
+    this.obj.style.zIndex = 1000000 - Math.floor(Math.sqrt(Math.pow(((this.z - (globalZ - (Math.cos((globalXDeg * Math.PI) / 180) * 300)))),2) + Math.pow((this.x - (globalX - (Math.sin((globalXDeg * Math.PI) / 180) * 300))),2))  * 100);
     this.obj.style.height = this.height + "px";
     this.obj.style.margin = "0px -" + (this.width / 2) + "px";
     this.obj.style.transform = "rotateX(" + globalYDeg + "deg) rotateY(" + globalXDeg + "deg) translateX(" + (this.x - globalX) + "px) translateY(" + ((this.y - globalY) * -1) + "px) translateZ(" + ((this.z - globalZ) * -1) + "px) rotateY(" + this.spin + "deg)";

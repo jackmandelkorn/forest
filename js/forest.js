@@ -1,4 +1,5 @@
 var globalSize = 7000;
+var radius = 100;
 var defaultWidth = 200;
 var gif = false;
 var globalResult;
@@ -16,7 +17,11 @@ w.onmessage = function(e) {
       for (var a = 0; a < repeat; a++) {
         var width = defaultWidth + Math.round(Math.random() * (defaultWidth / 10));
         var height = Math.round((width / result.items[i].image.width) * result.items[i].image.height);
-        var panel = new Panel(width,height,(Math.round(Math.random() * globalSize) - (globalSize / 2)),0,(Math.round(Math.random() * globalSize) - (globalSize / 2)),Math.round(Math.random() * 180),("background-image:url(" + result.items[i].link + ")"));
+        var x = (Math.round(Math.random() * globalSize) - (globalSize / 2));
+        var z = (Math.round(Math.random() * globalSize) - (globalSize / 2));
+        x += ((Math.abs(x) / x) * radius);
+        z += ((Math.abs(z) / z) * radius);
+        var panel = new Panel(width,height,x,0,z,Math.round(Math.random() * 180),("background-image:url(" + result.items[i].link + ")"));
         var num = i;
         panel.obj.onclick = function(){window.open(result.items.slice()[num].image.contextLink);};
         panel.obj.style.cursor = "pointer";

@@ -31,4 +31,5 @@ body {
   transition: height ease 0.3s;
   background-size: cover;
   background-position: center;
+  cursor: pointer;
 }

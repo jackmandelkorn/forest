@@ -5,7 +5,7 @@ var globalXDeg = 0;
 var globalYDeg = 0;
 
 class Panel {
-  constructor(width, height, x, y, z, style) {
+  constructor(width, height, x, y, z, link, style) {
     Panel.all.push(this);
   	this.id = Math.random().toString(36).substr(2, 9);
     this.height = height;
@@ -20,6 +20,7 @@ class Panel {
     this.update();
     this.obj.className = "panel";
     this.obj.id = this.id;
+    this.obj.href = link;
     document.getElementById("main").appendChild(this.obj);
   }
   update() {

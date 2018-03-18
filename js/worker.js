@@ -1,4 +1,4 @@
-self.importScripts("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js");
+self.importScripts("https://github.com/kpozin/jquery-nodom");
 
 //when the worker receives a message
 onmessage = function(e) {

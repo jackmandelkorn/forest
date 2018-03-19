@@ -142,10 +142,15 @@ function instagramHashtag(tagname) {
   var feed = new Instafeed({
     get: 'tagged',
     tagName: tagname,
-    clientId: clientId,
+    accessToken: $.urlParam("code"),
     success: function(data) {
       console.log(data);
     }
   });
   feed.run();
+}
+
+$.urlParam = function(name){
+	var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+	return results[1] || 0;
 }

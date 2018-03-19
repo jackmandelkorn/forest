@@ -4,6 +4,8 @@ var globalZ = 0;
 var globalXDeg = 0;
 var globalYDeg = 0;
 
+var maxSearch = 600;
+
 class Panel {
   constructor(width, height, x, y, z, spin, style) {
     Panel.all.push(this);
@@ -83,7 +85,7 @@ function updateInfo() {
   var y = Math.round(globalZ / 7);
   el.innerHTML = "x: " + x + "<br>y: " + y+ "<br>facing: " + direction;
   document.getElementById("panel-bottom").innerHTML = (Panel.all.length - 1) + " results";
-  if (Panel.all.length > 1000) {
+  if (Panel.all.length > maxSearch) {
     document.getElementById("search-button").className = "panel-button disabled";
   }
 }

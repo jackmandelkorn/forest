@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
 
 body {
   background-color: AliceBlue;
@@ -31,7 +32,7 @@ body {
 
 .text {
   color: gray;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
   position: fixed;
   z-index: 10000000000;
@@ -46,6 +47,39 @@ body {
   top: 8px;
   right: 8px;
   text-align: right;
+}
+
+#panel-title {
+  color: gray;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 36px;
+  margin: 0px;
+}
+
+#panel-subtitle {
+  color: gray;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+#panel-input {
+  outline: none;
+  border: none;
+  font-size: 60px;
+  font-weight: 100;
+  color: gray;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 10px 0px;
+  line-height: 60px;
+  border-bottom: 1px solid gray;
+  width: 500px;
+  background: transparent;
+}
+#panel-input::placeholder {
+  color: #303030;
 }
 
 .panel {
@@ -63,4 +97,32 @@ body {
   justify-content: center;
   align-items: center;
   align-content: center;
+}
+
+.panel-button {
+  transition: all ease 0.3s;
+  color: gray;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  background: transparent;
+  outline: none;
+  padding: 7px 12px;
+  margin: 4px;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+.panel-button.disabled {
+  cursor: default;
+  color: #303030;
+  border: 1px solid #303030;
+}
+.panel-button:not(.disabled):hover {
+  border: 1px solid #f0f0f0;
+  color: #f0f0f0;
+}
+.panel-button:not(.disabled):active {
+  border: 1px solid #f0f0f0;
+  color: black;
+  background-color: #f0f0f0;
 }

@@ -5,6 +5,7 @@ var gif = false;
 var globalResult;
 var clear = false;
 var repeat = 2;
+var clientId = "99e4d816847b44ac9a9dec9c2cb2e42e";
 
 initPanel();
 updateAll();
@@ -135,4 +136,16 @@ function clearClick() {
 
 function footerClick() {
   window.open("http://jackmandelkorn.com");
+}
+
+function instagramHashtag(tagname) {
+  var feed = new Instafeed({
+    get: 'tagged',
+    tagName: tagname,
+    clientId: clientId,
+    success: function(data) {
+      console.log(data);
+    }
+  });
+  feed.run();
 }

@@ -5,7 +5,32 @@ var gif = false;
 var globalResult;
 var clear = false;
 var repeat = 2;
-var clientId = "99e4d816847b44ac9a9dec9c2cb2e42e";
+var code = false;
+var auth = false;
+var user = false;
+
+try {
+  code = $.urlParam("code");
+}
+catch (err) {
+  code = false;
+}
+if (code) {
+  $.ajax({
+    url: "https://api.instagram.com/oauth/access_token",
+    data: {
+      client_id: "99e4d816847b44ac9a9dec9c2cb2e42e",
+      client_secret: "5d0d8cc2d32b45cd8abd114b7dd7522d",
+      grant_type: "authorization_code",
+      redirect_uri: "https://jackmandelkorn.github.io/forest/",
+      code: code
+    },
+    success: function(data){
+      auth = data.access_token;
+      user = data.user;
+    }
+  });
+}
 
 initPanel();
 updateAll();
@@ -139,15 +164,20 @@ function footerClick() {
 }
 
 function instagramHashtag(tagname) {
-  var feed = new Instafeed({
-    get: 'tagged',
-    tagName: tagname,
-    accessToken: $.urlParam("code"),
-    success: function(data) {
-      console.log(data);
-    }
-  });
-  feed.run();
+  if (auth) {
+    var feed = new Instafeed({
+      get: 'tagged',
+      tagName: tagname,
+      accessToken: auth,
+      success: function(data) {
+        console.log(data);
+      }
+    });
+    feed.run();
+  }
+  else {
+    //
+  }
 }
 
 $.urlParam = function(name){

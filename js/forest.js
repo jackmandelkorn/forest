@@ -116,5 +116,12 @@ function clearClick() {
     clear = false;
     button.className = "panel-button disabled";
     updateAll();
+    document.getElementById("panel-input").value = "";
+    document.getElementById("search-button").className = "panel-button disabled";
+    document.getElementById("panel-input").focus();
   }
+}
+
+function footerClick() {
+  window.open("http://jackmandelkorn.com");
 }

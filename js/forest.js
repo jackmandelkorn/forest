@@ -57,7 +57,7 @@ function initPanel() {
   input.maxLength = 32;
   input.placeholder = "search...";
   input.onchange = inputChange;
-  input.onkeypress = inputChange;
+  input.onkeypress = inputEnter;
   input.onkeydown = inputChange;
   input.onkeyup = inputChange;
   var buttonContainer = document.createElement("div");
@@ -84,6 +84,15 @@ function initPanel() {
   el.appendChild(buttonContainer);
   el.appendChild(bottom);
   input.focus();
+}
+
+function inputEnter(e) {
+  if (e.which === 13) {
+    searchClick();
+  }
+  else {
+    inputChange();
+  }
 }
 
 function inputChange() {

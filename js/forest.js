@@ -101,6 +101,7 @@ function searchClick() {
   if (!button.className.includes("disabled")) {
     search(document.getElementById("panel-input").value);
     document.getElementById("panel-input").value = "";
+    document.getElementById("search-button").className = "panel-button disabled";
   }
 }
 

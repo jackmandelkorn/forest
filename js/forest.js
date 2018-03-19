@@ -62,23 +62,27 @@ function initPanel() {
   input.onkeyup = inputChange;
   var buttonContainer = document.createElement("div");
   buttonContainer.style.marginTop = "20px";
-  buttonContainer.style.marginBottom = "40px";
+  buttonContainer.style.marginBottom = "20px";
     var b1 = document.createElement("button");
     b1.className = "panel-button disabled";
     b1.id = "search-button";
-    b1.innerHTML = "Add Search";
+    b1.innerHTML = "ADD SEARCH";
     b1.onclick = searchClick;
     var b2 = document.createElement("button");
     b2.className = "panel-button disabled";
     b2.id = "clear-button";
-    b2.innerHTML = "Clear";
+    b2.innerHTML = "CLEAR";
     b2.onclick = clearClick;
     buttonContainer.appendChild(b1);
     buttonContainer.appendChild(b2);
+  var bottom = document.createElement("p");
+  bottom.id = "panel-bottom";
+  bottom.innerHTML = "0 results";
   el.appendChild(title);
   el.appendChild(p);
   el.appendChild(input);
   el.appendChild(buttonContainer);
+  el.appendChild(bottom);
   input.focus();
 }
 
@@ -96,6 +100,7 @@ function searchClick() {
   var button = document.getElementById("search-button");
   if (!button.className.includes("disabled")) {
     search(document.getElementById("panel-input").value);
+    document.getElementById("panel-input").value = "";
   }
 }
 

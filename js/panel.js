@@ -82,4 +82,5 @@ function updateInfo() {
   var x = Math.round(globalX / 7);
   var y = Math.round(globalZ / 7);
   el.innerHTML = "x: " + x + "<br>y: " + y+ "<br>facing: " + direction;
+  document.getElementById("panel-bottom").innerHTML = (Panel.all.length - 1) + " results";
 }

@@ -111,6 +111,8 @@ function clearClick() {
     for (var i = 0; i < Panel.all.length; i++) {
       if (!Panel.all[i].obj.className.includes("safe")) {
         Panel.all[i].obj.remove();
+        Panel.all.splice(i,1);
+        i--;
       }
     }
     clear = false;

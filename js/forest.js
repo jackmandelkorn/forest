@@ -88,7 +88,7 @@ function initPanel() {
 
 function inputChange() {
   var input = document.getElementById("panel-input");
-  if (input.value.length > 0 && input.value.length < 33) {
+  if (input.value.length > 0 && input.value.length < 33 && Panel.all.length <= 1000) {
     document.getElementById("search-button").className = "panel-button";
   }
   else {

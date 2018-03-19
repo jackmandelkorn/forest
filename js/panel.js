@@ -83,4 +83,7 @@ function updateInfo() {
   var y = Math.round(globalZ / 7);
   el.innerHTML = "x: " + x + "<br>y: " + y+ "<br>facing: " + direction;
   document.getElementById("panel-bottom").innerHTML = (Panel.all.length - 1) + " results";
+  if (Panel.all.length > 1000) {
+    document.getElementById("search-button").className = "panel-button disabled";
+  }
 }

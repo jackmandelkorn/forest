@@ -115,5 +115,6 @@ function clearClick() {
     }
     clear = false;
     button.className = "panel-button disabled";
+    updateAll();
   }
 }

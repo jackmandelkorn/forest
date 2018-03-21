@@ -107,9 +107,6 @@ body.dark {
   background-position: center;
   box-sizing: border-box;
 }
-.panel:active {
-  height: 0px !important;
-}
 
 .panel-flex {
   display: flex;

@@ -45,7 +45,7 @@ function updateAll() {
 
 function updateGround() {
   var ground = document.getElementById("ground");
-  ground.style.height = (((window.innerHeight * (0.1 - (Math.sin((globalYDeg * Math.PI) / 180) / 2)))) - 5) + "px";
+  ground.style.height = (((window.innerHeight * (0.1 - (Math.sin((globalYDeg * Math.PI) / 180) / 2)))) + 0) + "px";
 }
 
 var speed = 14;
